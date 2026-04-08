@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Loader2, Zap } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -83,11 +84,14 @@ export default function Login() {
             >
               {loading ? <><Loader2 size={16} className="animate-spin" /> Signing in...</> : 'Sign in'}
             </button>
+            <p className="text-sm mt-4 text-center">
+              Don't have an account?{" "}
+              <Link to="/register" className="text-blue-400">
+                Register
+              </Link>
+            </p>
           </form>
 
-          <p className="text-gray-600 text-xs text-center mt-6">
-            Default: admin@example.com / admin123
-          </p>
         </div>
       </div>
     </div>

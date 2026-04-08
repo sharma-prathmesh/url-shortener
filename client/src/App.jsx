@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Links from './pages/Links';
 import Analytics from './pages/Analytics';
+import Register from './pages/Register';
 
 function ProtectedLayout() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -57,10 +58,19 @@ function AppRoutes() {
 
   return (
     <Routes>
+      {/* LOGIN */}
       <Route
         path="/login"
         element={isAuthenticated ? <Navigate to="/" replace /> : <Login />}
       />
+
+      {/* ✅ REGISTER ADD */}
+      <Route
+        path="/register"
+        element={isAuthenticated ? <Navigate to="/" replace /> : <Register />}
+      />
+
+      {/* PROTECTED ROUTES */}
       <Route
         path="/*"
         element={

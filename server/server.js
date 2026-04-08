@@ -68,18 +68,6 @@ async function startServer() {
       serverSelectionTimeoutMS: 10000,
     });
     console.log('✅ MongoDB connected');
-
-    // Create default admin user if not exists
-    const User = require('./models/User');
-    const existing = await User.findOne({ email: process.env.ADMIN_EMAIL });
-    if (!existing) {
-      await User.create({
-        email: process.env.ADMIN_EMAIL,
-        password: process.env.ADMIN_PASSWORD,
-      });
-      console.log(`✅ Admin user created: ${process.env.ADMIN_EMAIL}`);
-    }
-
     app.listen(PORT, () => {
       console.log(`🚀 Server running on http://localhost:${PORT}`);
     });

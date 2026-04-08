@@ -45,7 +45,7 @@ export default function Links({ onCreateLink }) {
   };
 
   return (
-    <div className="p-6 max-w-7xl">
+    <div className="p-6 w-full max-w-[1400px] mx-auto">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-bold text-white tracking-tight">All Links</h1>
@@ -70,7 +70,7 @@ export default function Links({ onCreateLink }) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search links..."
-          className="w-full max-w-sm bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+          className="w-full md:w-[350px] bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
         />
       </div>
 
