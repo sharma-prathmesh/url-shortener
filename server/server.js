@@ -24,7 +24,7 @@ app.use(cors({
       'http://localhost:5177',
       process.env.CLIENT_URL
     ].filter(Boolean);
-    
+
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
@@ -71,8 +71,8 @@ async function startServer() {
       serverSelectionTimeoutMS: 10000,
     });
     console.log('✅ MongoDB connected');
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server running on port ${PORT}`);
     });
   } catch (err) {
     console.error('❌ Failed to start server:', err.message);
