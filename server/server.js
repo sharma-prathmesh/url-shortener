@@ -59,6 +59,9 @@ app.use('/api/urls', createLimiter, urlRoutes);
 app.use('/api/analytics', analyticsRoutes);
 
 // Redirect route (must be last)
+app.get('/', (req, res) => {
+  res.send('API running 🚀');
+});
 app.use('/', redirectRouter);
 
 // Connect to MongoDB and start server
